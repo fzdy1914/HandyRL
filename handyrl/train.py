@@ -466,7 +466,8 @@ class Learner:
         self.model_era += 1
         self.model = model
         os.makedirs('models', exist_ok=True)
-        torch.save(model.state_dict(), self.model_path(self.model_era))
+        if (self.model_era + 1) % 100 == 0:
+            torch.save(model.state_dict(), self.model_path(self.model_era))
         torch.save(model.state_dict(), self.latest_model_path())
 
     def feed_episodes(self, episodes):
