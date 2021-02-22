@@ -40,7 +40,7 @@ class GeeseNet(BaseModel):
     def __init__(self, env, args={}):
         super().__init__(env, args)
         input_shape = env.observation().shape
-        layers, filters = 12, 32
+        layers, filters = 16, 48
         self.conv0 = TorusConv2d(input_shape[0], filters, (3, 3), True)
         self.blocks = nn.ModuleList([TorusConv2d(filters, filters, (3, 3), True) for _ in range(layers)])
         self.head_p = nn.Linear(filters, 4, bias=False)

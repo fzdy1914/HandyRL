@@ -1,15 +1,11 @@
 
 env_args:
-    env: 'TicTacToe'
-    source: 'handyrl.envs.tictactoe'
-    #env: 'Geister'
-    #source: 'handyrl.envs.geister'
-    #env: 'HungryGeese'
-    #source: 'handyrl.envs.kaggle.hungry_geese'
+    env: 'HungryGeese'
+    source: 'handyrl.envs.kaggle.hungry_geese'
 
 
 train_args:
-    turn_based_training: True
+    turn_based_training: False
     observation: False
     gamma: 0.8
     forward_steps: 16
@@ -19,7 +15,7 @@ train_args:
     update_episodes: 200
     batch_size: 128
     minimum_episodes: 400
-    maximum_episodes: 100000
+    maximum_episodes: 500000
     num_batchers: 2
     eval_rate: 0.1
     worker:
