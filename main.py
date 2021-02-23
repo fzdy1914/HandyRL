@@ -4,7 +4,9 @@
 import os
 import sys
 import yaml
+import torch.multiprocessing
 
+torch.multiprocessing.set_sharing_strategy('file_system')
 
 if __name__ == '__main__':
     os.environ['OMP_NUM_THREADS'] = '1'
