@@ -16,15 +16,15 @@ train_args:
     batch_size: 128
     minimum_episodes: 400
     maximum_episodes: 100000
-    num_batchers: 2
+    num_batchers: 1
     eval_rate: 0.1
     worker:
         num_parallel: 8
     lambda: 0.7
-    policy_target: 'TD' # 'UGPO' 'VTRACE' 'TD' 'MC'
-    value_target: 'TD' # 'VTRACE' 'TD' 'MC'
+    policy_target: 'VTRACE' # 'UGPO' 'VTRACE' 'TD' 'MC'
+    value_target: 'VTRACE' # 'VTRACE' 'TD' 'MC'
     seed: 0
-    restart_epoch: 0
+    restart_epoch: 3733
 
 
 worker_args:
